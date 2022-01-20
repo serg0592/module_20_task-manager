@@ -13,3 +13,8 @@ export const generateTestUser = function (User) {
   const testUser = new User("test", "qwerty123");
   User.save(testUser);
 };
+
+export const generateTestAdmin = function (Admin) {
+  const testAdmin = new Admin("adminlog", "adminpas");
+  Admin.save(testAdmin);
+};

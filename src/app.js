@@ -4,14 +4,19 @@ import taskFieldTemplate from "./templates/taskField.html";
 import noAccessTemplate from "./templates/noAccess.html";
 import { User } from "./models/User";
 import { generateTestUser } from "./utils";
+import { generateTestAdmin } from "./utils";
 import { State } from "./state";
 import { authUser } from "./services/auth";
+import { Admin } from "./models/Admin";
 
 export const appState = new State();
 
 const loginForm = document.querySelector("#app-login-form");
 
+//debugger;
+
 generateTestUser(User);
+generateTestAdmin(Admin);
 
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();

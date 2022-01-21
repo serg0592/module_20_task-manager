@@ -1,3 +1,37 @@
 #app-login-btn {
   width: 160px;
 }
+
+#app-add-user-btn {
+  width: 200px;
+}
+
+#app-add-user-form {
+  display: inline-block;
+}
+
+.app-placeholder {
+  display: inline-block;
+  width: 40%;
+}
+
+.todo {
+  display: inline-block;
+  width: 33%;
+  min-height: 10px;
+  background-color: red;
+}
+
+.in-progress {
+  display: inline-block;
+  width: 33%;
+  min-height: 10px;
+  background-color: yellow;
+}
+
+.done {
+  display: inline-block;
+  width: 33%;
+  min-height: 10px;
+  background-color: green;
+}

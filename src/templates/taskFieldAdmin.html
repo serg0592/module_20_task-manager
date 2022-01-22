@@ -1,16 +1,28 @@
 <h1>Your tasks here</h1>
 <div class="add-bar">
-    <form  class="d-flex" id="app-add-user-form">
-        <input class="form-control me-2" id="app-add-user-form-log" name="login" autocomplete="username" type="text"
+    <form  class="d-flex app-add-user-form" >
+        <input class="form-control me-2 app-add-user-form-log" name="login" autocomplete="username" type="text"
             placeholder="New user login" aria-label="Login">
-        <input class="form-control me-2" id="app-add-user-form-pas" name="password" autocomplete="current-password" type="password"
+        <input class="form-control me-2 app-add-user-form-pas" name="password" autocomplete="current-password" type="password"
             placeholder="New user password" aria-label="Password">
-        <button  class="btn btn-outline-info" type="submit">Add user</button>
+        <button class="btn btn-outline-info app-btn-add-user-form" type="submit">Add user</button>
     </form>
 </div>
+<div class="app-add-task-bar">
+    <button class="btn btn-outline-info app-btn-add-task">+ Add task</button>
+</div>
 <div class="kanban">
-    <div class="todo"></div>
-    <div class="in-progress"></div>
-    <div class="done"></div>
+    <div class="todo">
+        <div class="header">Ready</div>
+        <div class="todo-list"></div>
+    </div>
+    <div class="in-progress">
+        <div class="header">In-progress</div>
+        <div class="in-progress-list"></div>
+    </div>
+    <div class="done">
+        <div class="header">Done</div>
+        <div class="done-list"></div>
+    </div>
 </div>
 <div></div>

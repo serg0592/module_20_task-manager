@@ -7,11 +7,12 @@ import { User } from "./models/User";
 import { generateAdmin } from "./utils";
 import { State } from "./state";
 import { authUser } from "./services/auth";
-import { addUser } from "./utils";
+import { addUser } from "./services/addUser";
+import { addTask } from "./services/addTask";
 
 export const appState = new State();
 
-const loginForm = document.querySelector("#app-login-form");
+const loginForm = document.querySelector(".app-login-form");
 
 //debugger;
 
@@ -26,11 +27,12 @@ loginForm.addEventListener("submit", function (e) {
   //debugger;
 
   if (authUser(login, password) === 'admin') {
-    document.querySelector("#content").innerHTML = taskFieldAdminTemplate;
+    document.querySelector(".content").innerHTML = taskFieldAdminTemplate;
     addUser();
+    addTask();
   } else if (authUser(login, password) === true) {
-    document.querySelector("#content").innerHTML = taskFieldTemplate;
+    document.querySelector(".content").innerHTML = taskFieldTemplate;
   } else {
-    document.querySelector("#content").innerHTML = noAccessTemplate;
+    document.querySelector(".content").innerHTML = noAccessTemplate;
   };
 });

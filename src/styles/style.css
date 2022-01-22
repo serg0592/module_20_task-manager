@@ -1,12 +1,12 @@
-#app-login-btn {
+.app-login-btn {
   width: 160px;
 }
 
-#app-add-user-btn {
+.app-add-user-btn {
   width: 200px;
 }
 
-#app-add-user-form {
+.app-add-user-form {
   display: inline-block;
 }
 
@@ -15,23 +15,50 @@
   width: 40%;
 }
 
+.app-btn-add-user-form {
+  min-width: 90px;
+}
+
+.app-add-user-form-log {
+  max-width: 200px;
+}
+
+.app-add-user-form-pas {
+  max-width: 200px;
+}
+
+.app-add-task-bar {
+  margin-top: 8px;
+}
+
+.kanban {
+  margin-top: 8px;
+}
+
 .todo {
   display: inline-block;
   width: 33%;
-  min-height: 10px;
+  min-height: 400px;
   background-color: red;
 }
 
 .in-progress {
   display: inline-block;
   width: 33%;
-  min-height: 10px;
+  min-height: 400px;
   background-color: yellow;
 }
 
 .done {
   display: inline-block;
   width: 33%;
-  min-height: 10px;
+  min-height: 400px;
   background-color: green;
+}
+
+.header {
+  position: relative;
+  left: calc(50%);
+  font-size: 20px;
+  font-weight: bold;
 }

@@ -10,6 +10,7 @@ import { authUser } from "./services/auth";
 export const appState = new State();
 
 const loginForm = document.querySelector("#app-login-form");
+debugger;
 
 generateTestUser(User);
 

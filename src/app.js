@@ -12,7 +12,6 @@ import { addUser } from "./utils";
 export const appState = new State();
 
 const loginForm = document.querySelector("#app-login-form");
-debugger;
 
 //debugger;
 

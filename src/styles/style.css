@@ -2,6 +2,10 @@
   width: 160px;
 }
 
+.add-bar {
+  margin-top: 8px;
+}
+
 .app-add-user-btn {
   width: 200px;
 }
@@ -28,37 +32,48 @@
 }
 
 .app-add-task-bar {
-  margin-top: 8px;
+  margin: 8px;
 }
 
 .kanban {
+  background-color: #0dcaf0;
+  border: 2px solid #0c8ea8;
+  border-radius: 10px;
   margin-top: 8px;
+  height: 490px;
 }
 
-.todo {
+.kanban-list {
   display: inline-block;
-  width: 33%;
-  min-height: 400px;
-  background-color: red;
+  width: 30%;
+  min-height: 200px;
+  max-height: 446px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 22px -4px 22px 22px;
 }
 
-.in-progress {
-  display: inline-block;
-  width: 33%;
-  min-height: 400px;
-  background-color: yellow;
-}
-
-.done {
-  display: inline-block;
-  width: 33%;
-  min-height: 400px;
-  background-color: green;
-}
-
-.header {
+.todo-header {
   position: relative;
-  left: calc(50%);
+  left: calc(50% - 30px);
   font-size: 20px;
   font-weight: bold;
+}
+
+.in-progress-header {
+  position: relative;
+  left: calc(50% - 40px);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.finished-header {
+  position: relative;
+  left: calc(50% - 30px);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.todo-list, .in-progress-list, .finished-list {
+  overflow: auto;
 }

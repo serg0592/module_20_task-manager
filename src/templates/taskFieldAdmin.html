@@ -1,31 +1,29 @@
-<div class="add-bar">
+<div class="add-user-bar">
     <form  class="d-flex app-add-user-form" >
         <input class="form-control me-2 app-add-user-form-log" name="login" autocomplete="username" type="text"
             placeholder="New user login" aria-label="Login">
         <input class="form-control me-2 app-add-user-form-pas" name="password" autocomplete="current-password" type="password"
             placeholder="New user password" aria-label="Password">
         <button class="btn btn-outline-info app-btn-add-user-form" type="submit">Add user</button>
+        <button class="btn btn-outline-info app-btn-add-task">+ Add task</button>
+        
     </form>
 </div>
 
 <div class="kanban">
-    <div class="kanban-list">
+    <div class="kanban-todo">
         <div>
             <p class="todo-header">To Do</p>
         </div>
-        <div class="todo-list">
-            <div class="add-task-bar">
-                <button class="btn btn-outline-info app-btn-add-task">+ Add task</button>
-            </div>
-        </div>        
+        <div class="todo-list"></div>
     </div>
-    <div class="kanban-list">
+    <div class="kanban-in-progress">
         <div>
             <p class="in-progress-header">In-progress</p>
         </div>
         <div class="in-progress-list"></div>
     </div>
-    <div class="kanban-list">
+    <div class="kanban-finished">
         <div>
             <p class="finished-header">Finished</p>
         </div>

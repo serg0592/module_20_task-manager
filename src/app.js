@@ -27,12 +27,13 @@ loginForm.addEventListener("submit", function (e) {
   //debugger;
 
   if (authUser(login, password) === 'admin') {
-    document.querySelector(".content").innerHTML = taskFieldAdminTemplate;
+    document.querySelector(".container").innerHTML = taskFieldAdminTemplate;
     addUser();
     addTask();
   } else if (authUser(login, password) === true) {
-    document.querySelector(".content").innerHTML = taskFieldTemplate;
+    document.querySelector(".container").innerHTML = taskFieldTemplate;
   } else {
-    document.querySelector(".content").innerHTML = noAccessTemplate;
+    document.querySelector(".container").innerHTML = noAccessTemplate;
   };
+  document.querySelector(".content").innerHTML = '';
 });

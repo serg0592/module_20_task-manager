@@ -47,7 +47,7 @@
   border: 2px solid #0c8ea8;
   border-radius: 10px;
   margin-top: 8px;
-  height: 81vh;
+  height: 78vh;
 }
 
 /*kanban-todo*/
@@ -105,7 +105,26 @@
   overflow: auto;
 }
 
+/*kanban new task*/
+.new-task-window {
+  position: absolute;
+  border: 2px solid #0c8ea8;
+  border-radius: 10px;
+  background-color: white;
+  margin: 40px 100px;
+  z-index: 999999;
+}
+
+.app-btn-close {
+  position: absolute;
+  right: 0px;
+  font-size: 24px;
+  line-height: 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
 .new-task-text {  
   width: 72vw;
-  height: 62vh;
+  height: 50vh;
 }

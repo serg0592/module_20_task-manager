@@ -6,27 +6,33 @@
             placeholder="New user password" aria-label="Password">
         <button class="btn btn-outline-info app-btn-add-user-form" type="submit">Add user</button>        
     </form>
-    <button class="btn btn-outline-info app-btn-add-task">+ Add task</button>
 </div>
 
 <div class="kanban">
     <div class="kanban-todo">
-        <div>
+        <div class="todo-shell">
             <p class="todo-header">To Do</p>
+            <div class="todo-list"></div>
+            <button class="btn app-btn-add-task">+ Add card</button>
         </div>
-        <div class="todo-list"></div>
     </div>
     <div class="kanban-in-progress">
-        <div>
-            <p class="in-progress-header">In-progress</p>
-        </div>
-        <div class="in-progress-list"></div>
+        <div class="in-progress-shell">
+            <div>
+                <p class="in-progress-header">In-progress</p>
+            </div>
+            <div class="in-progress-list"></div>
+            <button class="btn app-btn-add-in-progress">+ Add card</button>
+        </div>        
     </div>
     <div class="kanban-finished">
-        <div>
-            <p class="finished-header">Finished</p>
-        </div>
-        <div class="finished-list"></div>
+        <div class="finished-shell">
+            <div>
+                <p class="finished-header">Finished</p>
+            </div>
+            <div class="finished-list"></div>
+            <button class="btn app-btn-add-finished">+ Add card</button>
+        </div>        
     </div>
 </div>
 <div></div>

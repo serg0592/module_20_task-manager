@@ -1,4 +1,5 @@
 export const addTask = function () {
+    const toDoList = document.querySelector(".todo-list");   
     const addTaskBtn = document.querySelector(".app-btn-add-task");
 
     addTaskBtn.addEventListener('click', function () {
@@ -12,6 +13,7 @@ export const addTask = function () {
 
         const newTaskTextArea1 = document.createElement('textarea');
         newTaskTextArea1.className = "new-task-name";
+        newTaskTextArea1.rows = '1';
 
         const newTaskCloseBtn = document.createElement('button');
         newTaskCloseBtn.className = 'btn app-btn-close';
@@ -22,6 +24,11 @@ export const addTask = function () {
 
         const newTaskTextArea2 = document.createElement('textarea');
         newTaskTextArea2.className = "new-task-text";
+        newTaskTextArea2.rows = '8';
+
+        const newTaskSubmitBtn = document.createElement('button');
+        newTaskSubmitBtn.className = 'btn btn-outline-info app-btn-task-submit';
+        newTaskSubmitBtn.innerHTML = 'Submit';
 
         kanban.prepend(newTask);
         newTask.appendChild(newTaskCloseBtn);
@@ -29,7 +36,11 @@ export const addTask = function () {
         newTaskP1.appendChild(newTaskTextArea1);
         newTask.appendChild(newTaskP2);
         newTaskP2.appendChild(newTaskTextArea2);
-
-        const toDoList = document.querySelector(".todo-list");        
+        newTask.appendChild(newTaskSubmitBtn);     
     });
+
+    const newTaskCloseBtn = document.querySelector('.app-btn-close');
+    const newTaskSubmitBtn = document.querySelector('.app-btn-task-submit');
+
+    
 }

@@ -47,7 +47,7 @@
   border: 2px solid #0c8ea8;
   border-radius: 10px;
   margin-top: 8px;
-  height: 78vh;
+  height: 75vh;
 }
 
 /*kanban-todo*/
@@ -107,7 +107,8 @@
 
 /*kanban new task*/
 .new-task-window {
-  position: absolute;
+  position: absolute;  
+  height: 58vh;
   border: 2px solid #0c8ea8;
   border-radius: 10px;
   background-color: white;
@@ -120,11 +121,14 @@
   right: 0px;
   font-size: 24px;
   line-height: 0px;
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
+  margin: 5px -9px;
 }
 
 .new-task-text {  
   width: 72vw;
-  height: 50vh;
+}
+
+.app-btn-task-submit {
+  position: absolute;
+  right: 30px;
 }

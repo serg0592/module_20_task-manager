@@ -1,11 +1,15 @@
+export let toDoJSON;
 export const addTask = function () {
     const toDoList = document.querySelector(".todo-list");   
     const addTaskBtn = document.querySelector(".app-btn-add-task");
     const kanban = document.querySelector(".kanban");
-    const shell = document.querySelector('.app-btn-add-task-shell');
+    const addCardInProgressList = document.querySelector('.app-add-card-in-progress');
+
+    let toDoArr = [];
 
     addTaskBtn.addEventListener('click', function () {
         addTaskBtn.setAttribute('disabled', true);
+        addCardInProgressList.setAttribute('disabled', true);
 
         const newTask = document.createElement('div');
         newTask.className = "new-task-window";
@@ -55,10 +59,12 @@ export const addTask = function () {
 
         newTaskForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            addTaskBtn.removeAttribute('disabled');
             if (newTaskNameText.value === '') {
                 alert('Введите название задачи');
-            } else {
+            } else {                
+                addTaskBtn.removeAttribute('disabled');
+                addCardInProgressList.removeAttribute('disabled');
+
                 const toDoNode = document.createElement('div');
                 toDoNode.className = 'todo-node';
 
@@ -66,6 +72,17 @@ export const addTask = function () {
                 toDoNodeName.className = 'todo-node-name';
 
                 toDoNodeName.innerHTML = newTaskNameText.value;
+                toDoArr[toDoArr.length] = {
+                    name: newTaskNameText.value,
+                    descr: newTaskDescr.value
+                };
+                toDoJSON = JSON.stringify(toDoArr);
+                
+                const li = document.createElement('li');
+                li.className = `card`;
+                li.innerHTML = newTaskNameText.value,
+            
+                addCardInProgressList.appendChild(li);
 
                 toDoList.appendChild(toDoNode);
                 toDoNode.appendChild(toDoNodeName);

@@ -45,6 +45,19 @@
   height: 75vh;
 }
 
+.card {
+  list-style-type: none;
+  opacity: 1;
+  transform: scaleY(0);  
+  transform-origin: 0 0;
+  transition: all 0.2s ease 0s;
+}
+
+.app-li-btn {
+  color: #5E6C84;
+  padding: 0px 0px;
+}
+
 /*kanban-todo*/
 .kanban-todo {
   grid-area: "todo";
@@ -117,12 +130,32 @@
 }
 
 .in-progress-node-name {
+  margin: 0px;
   padding: 7px 8px;
 }
 
-.app-btn-add-in-progress {
+.app-add-card-in-progress {
   color: #5E6C84;
   padding: 0px 0px;
+  transform-origin: 0 0;
+  transition: all 0.2s ease 0s;
+}
+
+.app-add-card-in-progress:hover > li {
+  transform: scaleY(1);
+}
+
+.app-add-card-in-progress:disabled {
+  background-color: #5E6C84;
+  color: #000000;
+  padding: 0px 0px;
+  transition: all 1s ease 0s;
+}
+
+.app-add-card-in-progress:hover {
+  color: #000000;
+  padding: 0px 0px;
+  transition: all 1s ease 0s;
 }
 
 /*kanban-finished*/

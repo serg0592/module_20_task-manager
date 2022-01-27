@@ -9,6 +9,7 @@ import { State } from "./state";
 import { authUser } from "./services/auth";
 import { addUser } from "./services/addUser";
 import { addTask } from "./services/addTask";
+import { addInProgress } from "./services/addInProgress";
 
 export const appState = new State();
 

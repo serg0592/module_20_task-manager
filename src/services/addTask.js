@@ -4,6 +4,7 @@ export const addTask = function () {
     const addTaskBtn = document.querySelector(".app-btn-add-task");
     const kanban = document.querySelector(".kanban");
     const addCardInProgressList = document.querySelector('.app-add-card-in-progress');
+    const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
 
     let toDoArr = [];
 
@@ -79,10 +80,10 @@ export const addTask = function () {
                 toDoJSON = JSON.stringify(toDoArr);
                 
                 const li = document.createElement('li');
-                li.className = `card`;
-                li.innerHTML = newTaskNameText.value,
+                li.className = `app-add-card-in-progress-li`;
+                li.innerHTML = newTaskNameText.value;
             
-                addCardInProgressList.appendChild(li);
+                addCardInProgressDD.appendChild(li);
 
                 toDoList.appendChild(toDoNode);
                 toDoNode.appendChild(toDoNodeName);

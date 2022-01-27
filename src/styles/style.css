@@ -45,17 +45,30 @@
   height: 75vh;
 }
 
-.card {
+.app-add-in-progress-dropdown {
   list-style-type: none;
-  opacity: 1;
-  transform: scaleY(0);  
+  cursor: pointer;
+  transform: scaleY(0);
   transform-origin: 0 0;
-  transition: all 0.2s ease 0s;
+  transition: all .2s ease 0s;
 }
 
-.app-li-btn {
-  color: #5E6C84;
-  padding: 0px 0px;
+.dropdown-active {
+  transform: scaleY(1);
+  transition: all .2s ease 0s;
+}
+
+.app-add-card-in-progress-li {
+  list-style-type: none;
+  cursor: pointer;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  transition: all .2s ease 0s;
+}
+
+.li-active {
+  transform: scaleY(1);
+  transition: all .2s ease 0s;
 }
 
 /*kanban-todo*/
@@ -135,24 +148,15 @@
 }
 
 .app-add-card-in-progress {
-  color: #5E6C84;
+  position: relative;
   padding: 0px 0px;
-  transform-origin: 0 0;
-  transition: all 0.2s ease 0s;
-}
-
-.app-add-card-in-progress:hover > li {
-  transform: scaleY(1);
+  color: #5E6C84;
+  cursor: pointer;
+  transition: all .2s ease 0s;
 }
 
 .app-add-card-in-progress:disabled {
   background-color: #5E6C84;
-  color: #000000;
-  padding: 0px 0px;
-  transition: all 1s ease 0s;
-}
-
-.app-add-card-in-progress:hover {
   color: #000000;
   padding: 0px 0px;
   transition: all 1s ease 0s;

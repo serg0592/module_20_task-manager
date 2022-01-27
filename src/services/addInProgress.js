@@ -1,17 +1,14 @@
-import { toDoJSON } from "./addTask";
-
 export const addInProgress = function () {
-    const addCardList = document.querySelector('.app-add-card-in-progress');
-    toDoList = JSON.parse(toDoJSON);
-    for (let i = 0; i <= toDoList.length; i++) {
-        const li = document.createElement('li');
-        li.className = `card`;
-
-        const liBtn = document.querySelector('button');
-        liBtn.className = 'btn btn-outline-info app-li-btn';
-        liBtn.innerHTML = toDoList[i].name;
-
-        addCardList.appendChild(li);
-        li.appendChild(liBtn);
-    };
+    const addInProgress = document.querySelector('.app-add-card-in-progress');
+    const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
+    const addCardInProgressLI = document.querySelector('.app-add-card-in-progress-li');
+    
+    addInProgress.addEventListener('click', function () {
+        debugger;
+        addCardInProgressDD.className = 'app-add-in-progress-dropdown dropdown-active';
+        let childs = document.querySelector('.app-add-in-progress-dropdown').childNodes;
+        for (let i = 0; i < childs.length; i++) {
+            childs[i].className = 'app-add-card-in-progress-li li-active';
+        };
+    });
 }

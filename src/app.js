@@ -25,16 +25,14 @@ loginForm.addEventListener("submit", function (e) {
   const login = formData.get("login");
   const password = formData.get("password");
 
-  //debugger;
-
   if (authUser(login, password) === 'admin') {
     document.querySelector(".container").innerHTML = taskFieldAdminTemplate;
     addUser();
-    addTask();
+    addTask();    
+    addInProgress();
   } else if (authUser(login, password) === true) {
     document.querySelector(".container").innerHTML = taskFieldTemplate;
   } else {
     document.querySelector(".container").innerHTML = noAccessTemplate;
   };
-  document.querySelector(".content").innerHTML = '';
 });

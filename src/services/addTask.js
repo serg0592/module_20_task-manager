@@ -2,8 +2,11 @@ export const addTask = function () {
     const toDoList = document.querySelector(".todo-list");   
     const addTaskBtn = document.querySelector(".app-btn-add-task");
     const kanban = document.querySelector(".kanban");
+    const shell = document.querySelector('.app-btn-add-task-shell');
 
     addTaskBtn.addEventListener('click', function () {
+        addTaskBtn.setAttribute('disabled', true);
+
         const newTask = document.createElement('div');
         newTask.className = "new-task-window";
 
@@ -35,8 +38,8 @@ export const addTask = function () {
         newTaskSubmitBtn.innerHTML = 'Submit';
 
         kanban.prepend(newTask);
-        newTask.appendChild(newTaskForm);
         newTask.appendChild(newTaskCloseBtn);
+        newTask.appendChild(newTaskForm);
         newTaskForm.appendChild(newTaskName);
         newTaskName.appendChild(newTaskNameText);
         newTaskForm.appendChild(newTaskDescr);
@@ -46,11 +49,13 @@ export const addTask = function () {
         newTaskNameText.focus();
 
         newTaskCloseBtn.addEventListener('click', function () {
+            addTaskBtn.removeAttribute('disabled');
             kanban.removeChild(newTask);
         });
 
         newTaskForm.addEventListener('submit', function (e) {
-            e.preventDefault();            
+            e.preventDefault();
+            addTaskBtn.removeAttribute('disabled');
             if (newTaskNameText.value === '') {
                 alert('Введите название задачи');
             } else {

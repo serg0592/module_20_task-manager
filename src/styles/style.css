@@ -32,11 +32,6 @@
   max-width: 200px;
 }
 
-/*add-task
-.app-btn-add-task {
-  margin-top: 8px;
-}*/
-
 /*kanban*/
 .kanban {
   display: grid;
@@ -84,6 +79,14 @@
 .app-btn-add-task {
   color: #5E6C84;
   padding: 0px 0px;
+  transition: all 0.2s ease 0s;
+}
+
+.app-btn-add-task:disabled {
+  background-color: #5E6C84;
+  color: #000000;
+  padding: 0px 0px;
+  transition: all 1s ease 0s;
 }
 
 /*kanban-in-progress*/
@@ -184,7 +187,7 @@
 }
 
 .new-task-text {  
-  width: 72vw;
+  width: 60vw;
 }
 
 .app-btn-task-submit {

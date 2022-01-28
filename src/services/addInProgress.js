@@ -1,3 +1,4 @@
+import { toDoJSON } from './addTask';
 export const addInProgress = function () {
     const addInProgress = document.querySelector('.app-add-card-in-progress');
     const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
@@ -21,5 +22,6 @@ export const addInProgress = function () {
             };
             open = true;
         };
+    console.log(toDoJSON);
     });
 }

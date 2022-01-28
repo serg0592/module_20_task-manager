@@ -1,4 +1,4 @@
-export let toDoJSON;
+export let toDoJSON = String;
 export const addTask = function () {
     const toDoList = document.querySelector(".todo-list");   
     const addTaskBtn = document.querySelector(".app-btn-add-task");
@@ -6,38 +6,32 @@ export const addTask = function () {
     const addCardInProgressList = document.querySelector('.app-add-card-in-progress');
     const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
 
-    let toDoArr = [];
+let toDoArr = [];
 
     addTaskBtn.addEventListener('click', function () {
         addTaskBtn.setAttribute('disabled', true);
         addCardInProgressList.setAttribute('disabled', true);
 
         const newTask = document.createElement('div');
-        newTask.className = "new-task-window";
-
         const newTaskForm = document.createElement('form');
-
         const newTaskName = document.createElement('p');
-        newTaskName.innerHTML = 'Название задачи<br>';
-
         const newTaskNameText = document.createElement('input');
+        const newTaskCloseBtn = document.createElement('button');
+        const newTaskDescr = document.createElement('p');
+        const newTaskDescrText = document.createElement('textarea');
+        const newTaskSubmitBtn = document.createElement('button');
+
+        newTask.className = "new-task-window";        
+        newTaskName.innerHTML = 'Название задачи<br>';
         newTaskNameText.className = "new-task-name";
         newTaskNameText.rows = '1';
         newTaskNameText.cols = '80';
         newTaskNameText.maxLength = '60';
-
-        const newTaskCloseBtn = document.createElement('button');
         newTaskCloseBtn.className = 'btn app-btn-close';
         newTaskCloseBtn.innerHTML = 'X';
-
-        const newTaskDescr = document.createElement('p');
         newTaskDescr.innerHTML = "Описание задачи<Br>";
-
-        const newTaskDescrText = document.createElement('textarea');
         newTaskDescrText.className = "new-task-text";
         newTaskDescrText.rows = '8';
-
-        const newTaskSubmitBtn = document.createElement('button');
         newTaskSubmitBtn.className = 'btn btn-outline-info app-btn-task-submit';
         newTaskSubmitBtn.type = 'submit';
         newTaskSubmitBtn.innerHTML = 'Submit';
@@ -66,23 +60,21 @@ export const addTask = function () {
                 addTaskBtn.removeAttribute('disabled');
                 addCardInProgressList.removeAttribute('disabled');
 
-                const toDoNode = document.createElement('div');
-                toDoNode.className = 'todo-node';
-
-                const toDoNodeName = document.createElement('p');
-                toDoNodeName.className = 'todo-node-name';
-
-                toDoNodeName.innerHTML = newTaskNameText.value;
                 toDoArr[toDoArr.length] = {
                     name: newTaskNameText.value,
                     descr: newTaskDescr.value
                 };
                 toDoJSON = JSON.stringify(toDoArr);
 
+                const toDoNode = document.createElement('div');
+                const toDoNodeName = document.createElement('p');
                 const addCardInProgressLIShell =  document.createElement('div');
-                addCardInProgressLIShell.className = 'app-add-card-in-progress-li-shell';
-                
                 const li = document.createElement('li');
+
+                toDoNode.className = 'todo-node';
+                toDoNodeName.className = 'todo-node-name';
+                toDoNodeName.innerHTML = newTaskNameText.value;
+                addCardInProgressLIShell.className = 'app-add-card-in-progress-li-shell';
                 li.className = `app-add-card-in-progress-li`;
                 li.innerHTML = newTaskNameText.value;
             

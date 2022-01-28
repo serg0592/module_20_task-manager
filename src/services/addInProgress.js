@@ -1,14 +1,25 @@
 export const addInProgress = function () {
     const addInProgress = document.querySelector('.app-add-card-in-progress');
     const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
-    const addCardInProgressLI = document.querySelector('.app-add-card-in-progress-li');
+    let open, childs;
     
     addInProgress.addEventListener('click', function () {
-        debugger;
-        addCardInProgressDD.className = 'app-add-in-progress-dropdown dropdown-active';
-        let childs = document.querySelector('.app-add-in-progress-dropdown').childNodes;
-        for (let i = 0; i < childs.length; i++) {
-            childs[i].className = 'app-add-card-in-progress-li li-active';
+        if (open) {
+            addInProgress.className = 'app-add-card-in-progress';
+            addCardInProgressDD.className = 'app-add-in-progress-dropdown';
+            childs = document.querySelector('.app-add-in-progress-dropdown').childNodes;
+            for (let i = 0; i < childs.length; i++) {
+                childs[i].className = 'app-add-card-in-progress-li-shell';
+            };
+            open = false;
+        } else {
+            addInProgress.className = 'app-add-card-in-progress add-card-active';
+            addCardInProgressDD.className = 'app-add-in-progress-dropdown dropdown-active';
+            childs = document.querySelector('.app-add-in-progress-dropdown').childNodes;
+            for (let i = 0; i < childs.length; i++) {
+                childs[i].className = 'app-add-card-in-progress-li-shell shell-active';
+            };
+            open = true;
         };
     });
 }

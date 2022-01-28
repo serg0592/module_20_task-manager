@@ -78,12 +78,16 @@ export const addTask = function () {
                     descr: newTaskDescr.value
                 };
                 toDoJSON = JSON.stringify(toDoArr);
+
+                const addCardInProgressLIShell =  document.createElement('div');
+                addCardInProgressLIShell.className = 'app-add-card-in-progress-li-shell';
                 
                 const li = document.createElement('li');
                 li.className = `app-add-card-in-progress-li`;
                 li.innerHTML = newTaskNameText.value;
             
-                addCardInProgressDD.appendChild(li);
+                addCardInProgressDD.appendChild(addCardInProgressLIShell);
+                addCardInProgressLIShell.appendChild(li);
 
                 toDoList.appendChild(toDoNode);
                 toDoNode.appendChild(toDoNodeName);

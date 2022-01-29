@@ -8,10 +8,13 @@ export const addInProgress = function () {
         childs = document.querySelector('.app-add-in-progress-dropdown').childNodes;
 
         for (let i = 0; i < childs.length; i++) {
-            debugger; 
             document.querySelector(`.li_${i}`).addEventListener('click', function () {
+                console.log(addCardInProgressArr);
+                console.log(inProgressArr);
                 inProgressArr[inProgressArr.length] = addCardInProgressArr[i];
                 delete addCardInProgressArr[i];
+                console.log(addCardInProgressArr);
+                console.log(inProgressArr);
             });
         };
 

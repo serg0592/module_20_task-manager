@@ -72,7 +72,7 @@ const addTask = function () {
                 toDoNode.className = 'todo-node';
                 toDoNodeName.className = 'todo-node-name';
                 toDoNodeName.innerHTML = newTaskNameText.value;
-                addCardInProgressLIShell.className = `app-add-card-in-progress-li-shell li_${toDoArr.length}`;
+                addCardInProgressLIShell.className = `app-add-card-in-progress-li-shell li_${toDoArr.length - 1}`;
                 li.className = `app-add-card-in-progress-li`;
                 li.innerHTML = newTaskNameText.value;
             

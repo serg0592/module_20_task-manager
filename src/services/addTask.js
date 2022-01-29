@@ -5,7 +5,7 @@ const addTask = function () {
     const addTaskBtn = document.querySelector(".app-btn-add-task");
     const kanban = document.querySelector(".kanban");
     const addCardInProgressList = document.querySelector('.app-add-card-in-progress');
-    /*const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');*/
+    const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
 
     addTaskBtn.addEventListener('click', function () {
         addTaskBtn.setAttribute('disabled', true);
@@ -66,18 +66,18 @@ const addTask = function () {
 
                 const toDoNode = document.createElement('div');
                 const toDoNodeName = document.createElement('p');
-                /*const addCardInProgressLIShell =  document.createElement('div');
-                const li = document.createElement('li');*/
+                const addCardInProgressLIShell =  document.createElement('div');
+                const li = document.createElement('li');
 
                 toDoNode.className = 'todo-node';
                 toDoNodeName.className = 'todo-node-name';
                 toDoNodeName.innerHTML = newTaskNameText.value;
-                /*addCardInProgressLIShell.className = `app-add-card-in-progress-li-shell li_${toDoArr.length}`;
+                addCardInProgressLIShell.className = `app-add-card-in-progress-li-shell li_${toDoArr.length}`;
                 li.className = `app-add-card-in-progress-li`;
                 li.innerHTML = newTaskNameText.value;
             
                 addCardInProgressDD.appendChild(addCardInProgressLIShell);
-                addCardInProgressLIShell.appendChild(li);*/
+                addCardInProgressLIShell.appendChild(li);
 
                 toDoList.appendChild(toDoNode);
                 toDoNode.appendChild(toDoNodeName);

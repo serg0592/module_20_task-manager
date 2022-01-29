@@ -82,6 +82,11 @@
   transition: all 0.2s ease 0s;
 }
 
+.app-btn-add-task:hover {
+  border: 0.5px solid #5E6C84;
+  border-radius: 5px;
+}
+
 .app-btn-add-task:disabled {
   background-color: #5E6C84;
   color: #000000;
@@ -129,12 +134,16 @@
   transition: all .2s ease 0s;
 }
 
-.app-add-card-in-progress-text {
-  width: 80px;
+.app-btn-add-card-in-progress {
   padding: 0;
-  margin: 0;
+  margin: 0px 0px 3px 0px;
   color: #5E6C84;
-  cursor: pointer;
+  transition: all .2s ease 0s;
+}
+
+.app-btn-add-card-in-progress:hover {
+  border: 0.5px solid #5E6C84;
+  border-radius: 5px;
 }
 
 .add-card-active {
@@ -224,6 +233,12 @@
 .app-btn-add-finished {
   color: #5E6C84;
   padding: 0px 0px;
+  transition: all .2s ease 0s;
+}
+
+.app-btn-add-finished:hover {
+  border: 0.5px solid #5E6C84;
+  border-radius: 5px;
 }
 
 .todo-list, .in-progress-list, .finished-list {

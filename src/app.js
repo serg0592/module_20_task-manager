@@ -28,7 +28,7 @@ loginForm.addEventListener("submit", function (e) {
   if (authUser(login, password) === 'admin') {
     document.querySelector(".container").innerHTML = taskFieldAdminTemplate;
     addUser();
-    addTask();    
+    addTask();
     addInProgress();
   } else if (authUser(login, password) === true) {
     document.querySelector(".container").innerHTML = taskFieldTemplate;

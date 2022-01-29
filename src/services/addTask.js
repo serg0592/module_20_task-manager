@@ -1,12 +1,11 @@
-export let toDoJSON = String;
-export const addTask = function () {
+let toDoArr = [];
+let addCardInProgressArr = [];
+const addTask = function () {
     const toDoList = document.querySelector(".todo-list");   
     const addTaskBtn = document.querySelector(".app-btn-add-task");
     const kanban = document.querySelector(".kanban");
     const addCardInProgressList = document.querySelector('.app-add-card-in-progress');
-    const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
-
-let toDoArr = [];
+    /*const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');*/
 
     addTaskBtn.addEventListener('click', function () {
         addTaskBtn.setAttribute('disabled', true);
@@ -60,26 +59,25 @@ let toDoArr = [];
                 addTaskBtn.removeAttribute('disabled');
                 addCardInProgressList.removeAttribute('disabled');
 
-                toDoArr[toDoArr.length] = {
+                toDoArr[toDoArr.length] = addCardInProgressArr[toDoArr.length] = {
                     name: newTaskNameText.value,
                     descr: newTaskDescr.value
                 };
-                toDoJSON = JSON.stringify(toDoArr);
 
                 const toDoNode = document.createElement('div');
                 const toDoNodeName = document.createElement('p');
-                const addCardInProgressLIShell =  document.createElement('div');
-                const li = document.createElement('li');
+                /*const addCardInProgressLIShell =  document.createElement('div');
+                const li = document.createElement('li');*/
 
                 toDoNode.className = 'todo-node';
                 toDoNodeName.className = 'todo-node-name';
                 toDoNodeName.innerHTML = newTaskNameText.value;
-                addCardInProgressLIShell.className = 'app-add-card-in-progress-li-shell';
+                /*addCardInProgressLIShell.className = `app-add-card-in-progress-li-shell li_${toDoArr.length}`;
                 li.className = `app-add-card-in-progress-li`;
                 li.innerHTML = newTaskNameText.value;
             
                 addCardInProgressDD.appendChild(addCardInProgressLIShell);
-                addCardInProgressLIShell.appendChild(li);
+                addCardInProgressLIShell.appendChild(li);*/
 
                 toDoList.appendChild(toDoNode);
                 toDoNode.appendChild(toDoNodeName);
@@ -89,3 +87,5 @@ let toDoArr = [];
         });
     });
 }
+
+export {addTask, toDoArr, addCardInProgressArr};

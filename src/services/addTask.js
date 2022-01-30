@@ -1,10 +1,12 @@
-let toDoArr = [];
-const addTask = function () {
-    const toDoList = document.querySelector(".todo-list");   
+let toDoArr = [], addCardInProgressDD, toDoList;
+
+const addTask = function () {  
     const addTaskBtn = document.querySelector(".app-btn-add-task");
     const kanban = document.querySelector(".kanban");
     const addCardInProgressList = document.querySelector('.app-add-card-in-progress');
-    const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
+
+    addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
+    toDoList = document.querySelector(".todo-list");
 
     addTaskBtn.addEventListener('click', function () {
         addTaskBtn.setAttribute('disabled', true);
@@ -19,7 +21,8 @@ const addTask = function () {
         const newTaskDescrText = document.createElement('textarea');
         const newTaskSubmitBtn = document.createElement('button');
 
-        newTask.className = "new-task-window";        
+        newTask.className = "new-task-window";
+        newTaskForm.className = 'new-task-form';        
         newTaskName.innerHTML = 'Название задачи<br>';
         newTaskNameText.className = "new-task-name";
         newTaskNameText.rows = '1';
@@ -87,4 +90,4 @@ const addTask = function () {
     });
 }
 
-export {addTask, toDoArr, addCardInProgressDD};
+export {addTask, toDoArr, addCardInProgressDD, toDoList};

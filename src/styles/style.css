@@ -260,7 +260,7 @@
 /*kanban new task*/
 .new-task-window {
   position: absolute;  
-  height: 50vh;
+  height: auto;
   border: 2px solid #0c8ea8;
   border-radius: 10px;
   background-color: white;
@@ -279,9 +279,4 @@
 
 .new-task-text {  
   width: 60vw;
-}
-
-.app-btn-task-submit {
-  position: absolute;
-  right: 30px;
 }

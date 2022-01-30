@@ -5,9 +5,11 @@ export const chooseAddCardItem = function () {
     const inProgressList = document.querySelector(".in-progress-list");
     const addCardFinishedDD = document.querySelector('.app-add-finished-dropdown');
 
-    window.onclick = function(click) {
+    /*window.onclick = function(click)*/
+        debugger;
         for (let i = 0; i < addCardInProgressDD.childNodes.length; i++) {        
-            if (click.target.matches(`.li_${i}`)) {
+            /*if (click.target.matches(`li_${i}`) && click.target.matches(`app-add-card-in-progress-li`))*/
+            document.querySelector(`.li_${i}`).addEventListener('click', function () {
                 for (let j = 0; j < toDoArr.length; j++) {
                     if (toDoArr[j].name === document.querySelector(`.li_${i}`).innerHTML) {
                         inProgressArr[inProgressArr.length] = toDoArr[j];
@@ -33,7 +35,7 @@ export const chooseAddCardItem = function () {
                         addCardInProgressDD.removeChild(`li_${i}`);
                     };
                 };
-            };
+            });
         };
-    };
+    
 }

@@ -1,5 +1,4 @@
 let toDoArr = [];
-let addCardInProgressArr = [];
 const addTask = function () {
     const toDoList = document.querySelector(".todo-list");   
     const addTaskBtn = document.querySelector(".app-btn-add-task");
@@ -59,7 +58,7 @@ const addTask = function () {
                 addTaskBtn.removeAttribute('disabled');
                 addCardInProgressList.removeAttribute('disabled');
 
-                toDoArr[toDoArr.length] = addCardInProgressArr[toDoArr.length] = {
+                toDoArr[toDoArr.length] = {
                     name: newTaskNameText.value,
                     descr: newTaskDescr.value
                 };
@@ -88,4 +87,4 @@ const addTask = function () {
     });
 }
 
-export {addTask, toDoArr, addCardInProgressArr};
+export {addTask, toDoArr, addCardInProgressDD};

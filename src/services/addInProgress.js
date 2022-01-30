@@ -1,22 +1,13 @@
-import { addCardInProgressArr } from './addTask';
+import { chooseAddCardItem } from './chooseAddCardItem';
+
 export const addInProgress = function () {
     const addInProgress = document.querySelector('.app-add-card-in-progress');
     const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
-    let open, childs, inProgressArr;
+    let open, childs;
+
 
     addInProgress.addEventListener('click', function () {
         childs = document.querySelector('.app-add-in-progress-dropdown').childNodes;
-
-        for (let i = 0; i < childs.length; i++) {
-            document.querySelector(`.li_${i}`).addEventListener('click', function () {
-                console.log(addCardInProgressArr);
-                console.log(inProgressArr);
-                inProgressArr[inProgressArr.length] = addCardInProgressArr[i];
-                delete addCardInProgressArr[i];
-                console.log(addCardInProgressArr);
-                console.log(inProgressArr);
-            });
-        };
 
         if (open) {
             addInProgress.classList.remove('add-card-active');
@@ -34,6 +25,7 @@ export const addInProgress = function () {
             for (let i = 0; i < childs.length; i++) {
                 childs[i].classList.add('shell-active');
             };
+            chooseAddCardItem();
             open = true;            
         };
     });

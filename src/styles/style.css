@@ -149,8 +149,9 @@
 .add-card-active {
   width: 90%;
   height: auto;
-  padding-bottom: 1px;
   border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   background-color: #ffffff;
   text-decoration: none;
   transition: all .2s ease 0s;
@@ -165,38 +166,48 @@
 }
 
 .app-add-in-progress-dropdown {
+  height: 0px;
+  width: 90%;
   list-style-type: none;
-  transform: scaleY(0);
-  transform-origin: 0 0;
   transition: all .2s ease 0s;
 }
 
 .dropdown-active {
+  height: auto;
+  width: 90%;
+  margin: 0px;
+  padding: 3px 31px 1px 0px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background-color: #ffffff;
   transform: scaleY(1);
   transition: all .2s ease 0s;
 }
 
-.app-add-card-in-progress-li-shell {
-  width: 109%;
-  padding: 2px 8px;
-  margin: 2px 0px 0px -27px;
+.app-add-card-in-progress-li-shell, .app-add-card-in-progress-li-shell > li {
+  height: 0px;
+  padding: 0px;
+  margin: 2px 0px 4px 5px;
+  background-color: #0c8ea8; 
   border-radius: 5px;
-  background-color: #0c8ea8;  
+  color: #ffffff; 
   cursor: pointer;
   transform: scaleY(0);
-  transform-origin: 0 0;
+  /*transform-origin: 0 0;*/
   transition: all .2s ease 0s;
 }
 
-.app-add-card-in-progress-li {
-  list-style-type: none;
-  color: #ffffff;
-}
-
-.shell-active {
+.shell-active, .shell-active >li {
+  height: auto;
   cursor: pointer;
   transform: scaleY(1);
   transition: all .2s ease 0s;
+}
+
+.shell-active:hover, .shell-active >li:hover {
+  background-color: #0dcaf0;
+  color: #000000;
 }
 
 /*kanban-finished*/

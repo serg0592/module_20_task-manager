@@ -81,6 +81,10 @@ const addTask = function () {
                 addCardInProgressDD.appendChild(addCardInProgressLIShell);
                 addCardInProgressLIShell.appendChild(li);
 
+                /*addCardInProgressLIShell.addEventListener('click', function () {
+                    alert(`Клик`, newTaskNameText.value);
+                });*/
+
                 toDoList.appendChild(toDoNode);
                 toDoNode.appendChild(toDoNodeName);
 

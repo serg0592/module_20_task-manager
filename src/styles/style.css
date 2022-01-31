@@ -166,6 +166,7 @@
 }
 
 .app-add-in-progress-dropdown {
+  display: none;
   height: 0px;
   width: 90%;
   list-style-type: none;
@@ -173,6 +174,7 @@
 }
 
 .dropdown-active {
+  display: block;
   height: auto;
   width: 90%;
   margin: 0px;

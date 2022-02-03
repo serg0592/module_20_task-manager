@@ -33,7 +33,7 @@
 }
 
 /*kanban*/
-.kanban {
+/*.kanban {
   display: grid;
   grid-template-columns: 33% 34% 33%;
   grid-template-rows: auto;
@@ -43,10 +43,10 @@
   border-radius: 10px;
   margin-top: 8px;
   height: 75vh;
-}
+}*/
 
 /*kanban-todo*/
-.kanban-todo {
+/*.kanban-todo {
   grid-area: "todo";
   display: block;
   min-height: 25vh;
@@ -92,10 +92,10 @@
   color: #000000;
   padding: 0px 0px;
   transition: all 1s ease 0s;
-}
+}*/
 
 /*kanban-in-progress*/
-.kanban-in-progress {
+/*.kanban-in-progress {
   grid-area: "in-progress";
   display: block;
   min-height: 25vh;
@@ -195,7 +195,7 @@
   color: #ffffff; 
   cursor: pointer;
   transform: scaleY(0);
-  /*transform-origin: 0 0;*/
+  transform-origin: 0 0;
   transition: all .2s ease 0s;
 }
 
@@ -209,10 +209,10 @@
 .shell-active:hover, .shell-active >li:hover {
   background-color: #0dcaf0;
   color: #000000;
-}
+}*/
 
 /*kanban-finished*/
-.kanban-finished {
+/*.kanban-finished {
   grid-area: "finished";
   display: block;
   min-height: 25vh;
@@ -251,15 +251,15 @@
 .app-btn-add-finished:hover {
   border: 0.5px solid #5E6C84;
   border-radius: 5px;
-}
+}*/
 
-.todo-list, .in-progress-list, .finished-list {
+/*.todo-list, .in-progress-list, .finished-list {
   overflow: auto;
   max-height: 56vh;
-}
+}*/
 
 /*kanban new task*/
-.new-task-window {
+/*.new-task-window {
   position: absolute;  
   height: auto;
   border: 2px solid #0c8ea8;
@@ -280,4 +280,4 @@
 
 .new-task-text {  
   width: 60vw;
-}
+}*/

@@ -1,0 +1,41 @@
+/*kanban-finished*/
+.kanban-finished {
+    grid-area: "finished";
+    display: block;
+    min-height: 25vh;
+    max-height: 69vh;
+    background-color: #EBECF0;
+    border-radius: 10px;
+    margin: 22px 22px auto 11px;
+  }
+  
+  .finished-shell {
+    padding: 8px 12px;
+  }
+  
+  .finished-header {
+    font-weight: bold;
+    margin: 0px 0px 8px 0px;
+  }
+  
+  .finished-node {
+    width: 90%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 0px 0px 0px 0px;
+  }
+  
+  .finished-node-name {
+    padding: 7px 8px;
+  }
+  
+  .app-btn-add-finished {
+    color: #5E6C84;
+    padding: 0px 0px;
+    transition: all .2s ease 0s;
+  }
+  
+  .app-btn-add-finished:hover {
+    border: 0.5px solid #5E6C84;
+    border-radius: 5px;
+  }

@@ -1,0 +1,17 @@
+/*kanban*/
+.kanban {
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: auto;
+    grid-template-areas: "todo in-progress finished";
+    background-color: #0dcaf0;
+    border: 2px solid #0c8ea8;
+    border-radius: 10px;
+    margin-top: 8px;
+    height: 75vh;
+}
+
+.todo-list, .in-progress-list, .finished-list {
+  overflow: auto;
+  max-height: 56vh;
+}

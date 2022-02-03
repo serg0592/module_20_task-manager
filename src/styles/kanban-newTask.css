@@ -1,0 +1,23 @@
+/*kanban new task*/
+.new-task-window {
+    position: absolute;  
+    height: auto;
+    border: 2px solid #0c8ea8;
+    border-radius: 10px;
+    background-color: white;
+    padding: 8px;
+    margin: 40px 100px;
+    z-index: 999999;
+  }
+  
+  .app-btn-close {
+    position: absolute;
+    right: 0px;
+    font-size: 24px;
+    line-height: 0px;
+    margin: 0px -6px;
+  }
+  
+  .new-task-text {  
+    width: 60vw;
+  }

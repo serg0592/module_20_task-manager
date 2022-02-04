@@ -1,3 +1,5 @@
+import "../styles/kanban-newTask.css";
+
 let toDoArr = [], addCardInProgressDD, toDoList;
 
 const addTask = function () {  
@@ -68,22 +70,15 @@ const addTask = function () {
 
                 const toDoNode = document.createElement('div');
                 const toDoNodeName = document.createElement('p');
-                const addCardInProgressLIShell =  document.createElement('div');
                 const li = document.createElement('li');
 
                 toDoNode.className = 'todo-node';
                 toDoNodeName.className = 'todo-node-name';
                 toDoNodeName.innerHTML = newTaskNameText.value;
-                addCardInProgressLIShell.className = `app-add-card-in-progress-li-shell li_${toDoArr.length - 1}`;
-                li.className = `app-add-card-in-progress-li`;
+                li.className = `app-add-card-in-progress-li_${toDoArr.length - 1}`;
                 li.innerHTML = newTaskNameText.value;
             
-                addCardInProgressDD.appendChild(addCardInProgressLIShell);
-                addCardInProgressLIShell.appendChild(li);
-
-                /*addCardInProgressLIShell.addEventListener('click', function () {
-                    alert(`Клик`, newTaskNameText.value);
-                });*/
+                addCardInProgressDD.appendChild(li);
 
                 toDoList.appendChild(toDoNode);
                 toDoNode.appendChild(toDoNodeName);

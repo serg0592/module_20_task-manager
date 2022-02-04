@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/style.css";
+import "./styles/kanban.css";
 import taskFieldTemplate from "./templates/taskField.html";
 import noAccessTemplate from "./templates/noAccess.html";
 import taskFieldAdminTemplate from "./templates/taskFieldAdmin.html";

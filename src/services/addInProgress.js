@@ -1,11 +1,12 @@
-import { addCardInProgressDD } from './addTask';
 import { addCardMenuListener } from './addCardMenuListener';
-import { addCardInProgress } from './addTask';
 import "../styles/kanban-todo.css";
 import "../styles/kanban-InProgress.css";
 import "../styles/kanban-finished.css";
 
-export const addInProgress = function () {
+export const addInProgress = function () {    
+    const addCardInProgress = document.querySelector('.app-add-card-in-progress');
+    const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
+
     let ddstate;
 
     addCardInProgress.addEventListener('click', function () {

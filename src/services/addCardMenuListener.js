@@ -3,8 +3,10 @@ import { toDoArr } from './addTask';
 export const addCardMenuListener = function (item) {
     const addCardFinishedDD = document.querySelector('.app-add-finished-dropdown');
     const inProgressList = document.querySelector('.in-progress-list');
+    const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
     let inProgressArr = [];
     item.addEventListener('click', function () {
+        debugger;
         for (let j = 0; j < toDoArr.length; j++) {
             if (toDoArr[j].name === item.innerHTML) {
                 inProgressArr[inProgressArr.length] = toDoArr[j];

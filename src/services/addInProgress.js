@@ -3,21 +3,22 @@ import "../styles/kanban-todo.css";
 import "../styles/kanban-InProgress.css";
 import "../styles/kanban-finished.css";
 
-export const addInProgress = function () {    
+let ddstate = {
+    value: false
+};
+
+function addInProgress() {
     const addCardInProgress = document.querySelector('.app-add-card-in-progress');
     const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
-
-    let ddstate;
-
     addCardInProgress.addEventListener('click', function () {
-        if (ddstate) {
+        if (ddstate.value) {
             addCardInProgress.classList.remove('add-card-active');
             addCardInProgressDD.classList.remove('dropdown-active');
-            ddstate = false;
+            ddstate.value = false;
         } else {
             addCardInProgress.classList.add('add-card-active');
             addCardInProgressDD.classList.add('dropdown-active');
-            ddstate = true;
+            ddstate.value = true;
 
             let addCardItems = document.querySelectorAll('.app-add-card-in-progress-li');
 
@@ -29,3 +30,5 @@ export const addInProgress = function () {
     });
     
 }
+
+export {ddstate, addInProgress};

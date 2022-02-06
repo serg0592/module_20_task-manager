@@ -1,18 +1,19 @@
 import "../styles/kanban-newTask.css";
 
 let toDoArr = [], addCardInProgressDD, toDoList;
+const addCardInProgress = document.querySelector('.app-add-card-in-progress');
 
 const addTask = function () {  
     const addTaskBtn = document.querySelector(".app-btn-add-task");
     const kanban = document.querySelector(".kanban");
-    const addCardInProgressList = document.querySelector('.app-add-card-in-progress');
 
     addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
     toDoList = document.querySelector(".todo-list");
 
     addTaskBtn.addEventListener('click', function () {
+        debugger;
         addTaskBtn.setAttribute('disabled', true);
-        addCardInProgressList.setAttribute('disabled', true);
+        addCardInProgress.setAttribute('disabled', true);
 
         const newTask = document.createElement('div');
         const newTaskForm = document.createElement('form');
@@ -61,7 +62,7 @@ const addTask = function () {
                 alert('Введите название задачи');
             } else {                
                 addTaskBtn.removeAttribute('disabled');
-                addCardInProgressList.removeAttribute('disabled');
+                addCardInProgress.removeAttribute('disabled');
 
                 toDoArr[toDoArr.length] = {
                     name: newTaskNameText.value,
@@ -75,7 +76,7 @@ const addTask = function () {
                 toDoNode.className = 'todo-node';
                 toDoNodeName.className = 'todo-node-name';
                 toDoNodeName.innerHTML = newTaskNameText.value;
-                li.className = `app-add-card-in-progress-li_${toDoArr.length - 1}`;
+                li.className = `app-add-card-in-progress-li`;
                 li.innerHTML = newTaskNameText.value;
             
                 addCardInProgressDD.appendChild(li);
@@ -89,4 +90,4 @@ const addTask = function () {
     });
 }
 
-export {addTask, toDoArr, addCardInProgressDD, toDoList};
+export {toDoArr, addCardInProgressDD, toDoList, addCardInProgress, addTask};

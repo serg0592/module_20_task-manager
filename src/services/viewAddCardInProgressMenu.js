@@ -1,8 +1,8 @@
 import { inProgress } from "./addTask";
-import { ddstate } from "./addInProgress";
+import { inProgressDDState } from "./addInProgress";
 
 export const viewAddCardInProgressMenu = function () {
     inProgress.addCardInProgress.classList.add('add-card-active');
     inProgress.addCardInProgressDD.classList.add('dropdown-active');
-    ddstate.value = true;
+    inProgressDDState.value = true;
 }

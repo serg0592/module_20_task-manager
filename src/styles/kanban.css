@@ -13,6 +13,7 @@
 
 .todo-list, .in-progress-list, .finished-list {
   padding: 3px 31px 1px 0px;
+  border-bottom: 1px solid #5E6C84;
   list-style-type: none;
   overflow: auto;
   max-height: 56vh;

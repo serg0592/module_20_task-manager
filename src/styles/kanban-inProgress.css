@@ -71,6 +71,7 @@
   }
   
   .app-add-in-progress-dropdown {
+    display: none;
     width: 90%;
     list-style-type: none;
     transform: scaleY(0);

@@ -1,41 +1,117 @@
 /*kanban-finished*/
 .kanban-finished {
-    grid-area: "finished";
-    display: block;
-    min-height: 25vh;
-    max-height: 69vh;
-    background-color: #EBECF0;
-    border-radius: 10px;
-    margin: 22px 22px auto 11px;
-  }
-  
-  .finished-shell {
-    padding: 8px 12px;
-  }
-  
-  .finished-header {
-    font-weight: bold;
-    margin: 0px 0px 8px 0px;
-  }
-  
-  .finished-node {
-    width: 90%;
-    border-radius: 5px;
-    background-color: white;
-    padding: 0px 0px 0px 0px;
-  }
-  
-  .finished-node-name {
-    padding: 7px 8px;
-  }
-  
-  .app-btn-add-finished {
-    color: #5E6C84;
-    padding: 0px 0px;
-    transition: all .2s ease 0s;
-  }
-  
-  .app-btn-add-finished:hover {
-    border: 0.5px solid #5E6C84;
-    border-radius: 5px;
-  }
+  grid-area: "in-progress";
+  display: block;
+  min-height: 25vh;
+  max-height: 69vh;
+  background-color: #EBECF0;
+  border-radius: 10px;  
+  margin: 22px 11px auto 11px;
+}
+
+.finished-shell {
+  padding: 8px 12px;
+}
+
+.finished-header {
+  font-weight: bold;
+  margin: 0px 0px 8px 0px;
+}
+
+.finished-node {
+  box-sizing: border-box;
+  padding: 3px 0px 8px 5px;
+  margin: 2px 0px 10px 5px;
+  width: 90%;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.app-add-card-finished {
+  display: inline;
+  position: relative;
+  width: 90%;
+  height: 26px;
+  padding: 0px 0px;
+  transition: all .2s ease 0s;
+}
+
+.app-btn-add-card-finished {
+  padding: 0;
+  margin: 0px 0px 3px 0px;
+  color: #5E6C84;
+  transition: all .2s ease 0s;
+}
+
+.app-btn-add-card-finished:hover {
+  border: 0.5px solid #5E6C84;
+  border-radius: 5px;
+}
+
+.add-card-active {
+  display: block;
+  width: 90%;
+  height: auto;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: #ffffff;
+  text-decoration: none;
+  transform: scaleY(1);
+  transform-origin: 0 0;
+  transition: all .2s ease 0s;
+}
+
+.app-add-card-finished:disabled {
+  background-color: #5E6C84;
+  color: #000000;
+  padding: 0px 0px;
+  text-decoration: none;
+  transition: all .2s ease 0s;
+}
+
+.app-add-finished-dropdown {
+  width: 90%;
+  list-style-type: none;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  transition: all .2s ease 0s;
+}
+
+.dropdown-active {
+  display: block;
+  width: 90%;
+  margin: 0px;
+  padding: 3px 31px 1px 0px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background-color: #ffffff;
+  transform: scaleY(1);
+  transform-origin: 0 0;
+  transition: all .2s ease 0s;
+}
+
+.app-add-finished-dropdown > li {
+  box-sizing: border-box;
+  padding: 0px 0px 4px 5px;
+  margin: 2px 0px 4px 5px;
+  background-color: #0c8ea8; 
+  border-radius: 5px;
+  color: #ffffff; 
+  cursor: pointer;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  transition: all .2s ease 0s;
+}
+
+.dropdown-active > li {
+  cursor: pointer;
+  transform: scaleY(1);
+  transition: all .2s ease 0s;
+}
+
+.dropdown-active > li:hover {
+  background-color: #0dcaf0;
+  color: #000000;
+}

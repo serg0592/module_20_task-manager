@@ -1,4 +1,7 @@
 import "../styles/kanban-newTask.css";
+import "../styles/kanban-todo.css";
+import "../styles/kanban-InProgress.css";
+import "../styles/kanban-finished.css";
 
 let toDo = {        
         toDoList: {},
@@ -13,6 +16,13 @@ let inProgress = {
         inProgressArr: []
 }
 
+let finished = {
+    finishedList: {},
+    addCardFinished: {},
+    addCardFinishedDD: {},
+    finishedArr: []
+}
+
 
 const addTask = function () {  
     const addTaskBtn = document.querySelector(".app-btn-add-task");
@@ -21,6 +31,10 @@ const addTask = function () {
     inProgress.inProgressList = document.querySelector('.in-progress-list');
     inProgress.addCardInProgress = document.querySelector('.app-add-card-in-progress');
     inProgress.addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
+
+    finished.finishedList = document.querySelector('.finished-list');
+    finished.addCardFinished = document.querySelector('.app-add-card-finished');
+    finished.addCardFinishedDD = document.querySelector('.app-add-finished-dropdown');
 
     toDo.toDoList = document.querySelector(".todo-list");
 
@@ -101,4 +115,4 @@ const addTask = function () {
     });
 }
 
-export {toDo, inProgress, addTask};
+export {toDo, inProgress, finished, addTask};

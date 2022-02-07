@@ -1,18 +1,15 @@
 import { inProgress } from './addTask';
 import { hideAddCardInProgressMenu } from './hideAddCardInProgressMenu';
 import { viewAddCardInProgressMenu } from './viewAddCardInProgressMenu';
-import { addCardMenuListener } from './addCardMenuListener';
-import "../styles/kanban-todo.css";
-import "../styles/kanban-InProgress.css";
-import "../styles/kanban-finished.css";
+import { addCardInProgressMenuListener } from './addCardInProgressMenuListener'
 
-let ddstate = {
+let inProgressDDState = {
     value: false
 };
 
 function addInProgress() {
     inProgress.addCardInProgress.addEventListener('click', function () {
-        if (ddstate.value) {
+        if (inProgressDDState.value) {
             hideAddCardInProgressMenu();
         } else {
             viewAddCardInProgressMenu();
@@ -21,11 +18,11 @@ function addInProgress() {
 
             for (let i = 0; i < addCardItems.length; i++) {
                 let addCardItem = addCardItems[i];
-                addCardMenuListener(addCardItem);        
+                addCardInProgressMenuListener(addCardItem);        
             };
         };
     });
     
 }
 
-export {ddstate, addInProgress};
+export {inProgressDDState, addInProgress};

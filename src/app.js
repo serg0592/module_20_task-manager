@@ -11,6 +11,7 @@ import { authUser } from "./services/auth";
 import { addUser } from "./services/addUser";
 import { addTask } from "./services/addTask";
 import { addInProgress } from "./services/addInProgress";
+import { addFinished } from "./services/addFinished";
 
 export const appState = new State();
 
@@ -29,6 +30,7 @@ loginForm.addEventListener("submit", function (e) {
     addUser();
     addTask();
     addInProgress();
+    addFinished();
   } else if (authUser(login, password) === true) {
     document.querySelector(".container").innerHTML = taskFieldTemplate;
   } else {

@@ -3,7 +3,7 @@ import { inProgress } from './addTask';
 import { hideAddCardInProgressMenu } from './hideAddCardInProgressMenu';
 import "../styles/kanban-InProgress.css";
 
-export const addCardMenuListener = function (item) {
+export const addCardInProgressMenuListener = function (item) {
     const addCardFinishedDD = document.querySelector('.app-add-finished-dropdown');
 
     item.onclick = function () {

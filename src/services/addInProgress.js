@@ -1,3 +1,6 @@
+import { inProgress } from './addTask';
+import { hideAddCardInProgressMenu } from './hideAddCardInProgressMenu';
+import { viewAddCardInProgressMenu } from './viewAddCardInProgressMenu';
 import { addCardMenuListener } from './addCardMenuListener';
 import "../styles/kanban-todo.css";
 import "../styles/kanban-InProgress.css";
@@ -8,17 +11,11 @@ let ddstate = {
 };
 
 function addInProgress() {
-    const addCardInProgress = document.querySelector('.app-add-card-in-progress');
-    const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
-    addCardInProgress.addEventListener('click', function () {
+    inProgress.addCardInProgress.addEventListener('click', function () {
         if (ddstate.value) {
-            addCardInProgress.classList.remove('add-card-active');
-            addCardInProgressDD.classList.remove('dropdown-active');
-            ddstate.value = false;
+            hideAddCardInProgressMenu();
         } else {
-            addCardInProgress.classList.add('add-card-active');
-            addCardInProgressDD.classList.add('dropdown-active');
-            ddstate.value = true;
+            viewAddCardInProgressMenu();
 
             let addCardItems = document.querySelectorAll('.app-add-card-in-progress-li');
 

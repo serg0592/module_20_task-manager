@@ -1,18 +1,32 @@
 import "../styles/kanban-newTask.css";
 
-let toDoArr = [], toDoList;
+let toDo = {        
+        toDoList: {},
+        toDoListArr: [],
+        toDoArr: []
+}
+
+let inProgress = {
+        inProgressList: {},
+        addCardInProgress: {},
+        addCardInProgressDD: {},
+        inProgressArr: []
+}
+
 
 const addTask = function () {  
     const addTaskBtn = document.querySelector(".app-btn-add-task");
     const kanban = document.querySelector(".kanban");
-    const addCardInProgress = document.querySelector('.app-add-card-in-progress');
-    const addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
 
-    toDoList = document.querySelector(".todo-list");
+    inProgress.inProgressList = document.querySelector('.in-progress-list');
+    inProgress.addCardInProgress = document.querySelector('.app-add-card-in-progress');
+    inProgress.addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
+
+    toDo.toDoList = document.querySelector(".todo-list");
 
     addTaskBtn.addEventListener('click', function () {
         addTaskBtn.setAttribute('disabled', true);
-        addCardInProgress.setAttribute('disabled', true);
+        inProgress.addCardInProgress.setAttribute('disabled', true);
 
         const newTask = document.createElement('div');
         const newTaskForm = document.createElement('form');
@@ -61,24 +75,22 @@ const addTask = function () {
                 alert('Введите название задачи');
             } else {                
                 addTaskBtn.removeAttribute('disabled');
-                addCardInProgress.removeAttribute('disabled');
+                inProgress.addCardInProgress.removeAttribute('disabled');
 
-                const toDoNode = document.createElement('div');
-                const toDoNodeName = document.createElement('p');
-                const li = document.createElement('li');
+                const toDoNode = document.createElement('li');
+                const addCardInProgressNode = document.createElement('li');
 
                 toDoNode.className = 'todo-node';
-                toDoNodeName.className = 'todo-node-name';
-                toDoNodeName.innerHTML = newTaskNameText.value;
-                li.className = `app-add-card-in-progress-li`;
-                li.innerHTML = newTaskNameText.value;
+                toDoNode.innerHTML = newTaskNameText.value;
+                addCardInProgressNode.className = `app-add-card-in-progress-li`;
+                addCardInProgressNode.innerHTML = newTaskNameText.value;
             
-                addCardInProgressDD.appendChild(li);
+                inProgress.addCardInProgressDD.appendChild(addCardInProgressNode);
 
-                toDoList.appendChild(toDoNode);
-                toDoNode.appendChild(toDoNodeName);
+                toDo.toDoList.appendChild(toDoNode);
+                toDo.toDoListArr = document.querySelectorAll('.todo-node');
 
-                toDoArr[toDoArr.length] = {
+                toDo.toDoArr[toDo.toDoArr.length] = {
                     name: newTaskNameText.value,
                     descr: newTaskDescr.value
                 };
@@ -89,4 +101,4 @@ const addTask = function () {
     });
 }
 
-export {toDoArr, toDoList, addTask};
+export {toDo, inProgress, addTask};

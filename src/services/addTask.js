@@ -13,6 +13,7 @@ let inProgress = {
         inProgressList: {},
         addCardInProgress: {},
         addCardInProgressDD: {},
+        addCardInProgressBtn: {},
         inProgressArr: []
 }
 
@@ -20,6 +21,7 @@ let finished = {
     finishedList: {},
     addCardFinished: {},
     addCardFinishedDD: {},
+    addCardFinishedBtn: {},
     finishedArr: []
 }
 
@@ -31,16 +33,22 @@ const addTask = function () {
     inProgress.inProgressList = document.querySelector('.in-progress-list');
     inProgress.addCardInProgress = document.querySelector('.app-add-card-in-progress');
     inProgress.addCardInProgressDD = document.querySelector('.app-add-in-progress-dropdown');
+    inProgress.addCardInProgressBtn = document.querySelector('.app-btn-add-card-in-progress');
 
     finished.finishedList = document.querySelector('.finished-list');
     finished.addCardFinished = document.querySelector('.app-add-card-finished');
     finished.addCardFinishedDD = document.querySelector('.app-add-finished-dropdown');
+    finished.addCardFinishedBtn = document.querySelector('.app-btn-add-card-finished');
 
     toDo.toDoList = document.querySelector(".todo-list");
 
+    inProgress.addCardInProgressDD.style.display = 'none';
+    finished.addCardFinishedDD.style.display = 'none';
+
     addTaskBtn.addEventListener('click', function () {
         addTaskBtn.setAttribute('disabled', true);
-        inProgress.addCardInProgress.setAttribute('disabled', true);
+        inProgress.addCardInProgressBtn.setAttribute('disabled', true);
+        finished.addCardFinishedBtn.setAttribute('disabled', true);
 
         const newTask = document.createElement('div');
         const newTaskForm = document.createElement('form');
@@ -80,6 +88,8 @@ const addTask = function () {
 
         newTaskCloseBtn.addEventListener('click', function () {
             addTaskBtn.removeAttribute('disabled');
+            inProgress.addCardInProgressBtn.removeAttribute('disabled');
+            finished.addCardFinishedBtn.removeAttribute('disabled');
             kanban.removeChild(newTask);
         });
 
@@ -89,7 +99,8 @@ const addTask = function () {
                 alert('Введите название задачи');
             } else {                
                 addTaskBtn.removeAttribute('disabled');
-                inProgress.addCardInProgress.removeAttribute('disabled');
+                inProgress.addCardInProgressBtn.removeAttribute('disabled');
+                finished.addCardFinishedBtn.removeAttribute('disabled');
 
                 const toDoNode = document.createElement('li');
                 const addCardInProgressNode = document.createElement('li');

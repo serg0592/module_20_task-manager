@@ -62,7 +62,7 @@
   transition: all .2s ease 0s;
 }
 
-.app-add-card-finished:disabled {
+.app-btn-add-card-finished:disabled {
   background-color: #5E6C84;
   color: #000000;
   padding: 0px 0px;
@@ -73,13 +73,10 @@
 .app-add-finished-dropdown {
   width: 90%;
   list-style-type: none;
-  transform: scaleY(0);
-  transform-origin: 0 0;
   transition: all .2s ease 0s;
 }
 
 .dropdown-active {
-  display: block;
   width: 90%;
   margin: 0px;
   padding: 3px 31px 1px 0px;
@@ -87,8 +84,6 @@
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   background-color: #ffffff;
-  transform: scaleY(1);
-  transform-origin: 0 0;
   transition: all .2s ease 0s;
 }
 
@@ -100,14 +95,11 @@
   border-radius: 5px;
   color: #ffffff; 
   cursor: pointer;
-  transform: scaleY(0);
-  transform-origin: 0 0;
   transition: all .2s ease 0s;
 }
 
 .dropdown-active > li {
   cursor: pointer;
-  transform: scaleY(1);
   transition: all .2s ease 0s;
 }
 

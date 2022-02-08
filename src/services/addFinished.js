@@ -7,9 +7,8 @@ let finishedDDState = {
     value: false
 };
 
-function addFinished() {
-    finished.addCardFinishedDD.addEventListener('click', function () {
-        debugger;
+const addFinished = function () {
+    finished.addCardFinished.addEventListener('click', function () {
         if (finishedDDState.value) {
             hideAddCardFinishedMenu();
         } else {

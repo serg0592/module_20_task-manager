@@ -26,7 +26,8 @@ let finished = {
 }
 
 
-const addTask = function () {  
+const addTask = function () {
+    const body = document.querySelector(".bg-light");
     const addTaskBtn = document.querySelector(".app-btn-add-task");
     const kanban = document.querySelector(".kanban");
 
@@ -50,6 +51,7 @@ const addTask = function () {
         inProgress.addCardInProgressBtn.setAttribute('disabled', true);
         finished.addCardFinishedBtn.setAttribute('disabled', true);
 
+        const newTaskShell = document.createElement('div');
         const newTask = document.createElement('div');
         const newTaskForm = document.createElement('form');
         const newTaskName = document.createElement('p');
@@ -59,6 +61,7 @@ const addTask = function () {
         const newTaskDescrText = document.createElement('textarea');
         const newTaskSubmitBtn = document.createElement('button');
 
+        newTaskShell.className = "new-task-shell";
         newTask.className = "new-task-window";
         newTaskForm.className = 'new-task-form';        
         newTaskName.innerHTML = 'Название задачи<br>';
@@ -75,7 +78,8 @@ const addTask = function () {
         newTaskSubmitBtn.type = 'submit';
         newTaskSubmitBtn.innerHTML = 'Submit';
 
-        kanban.prepend(newTask);
+        body.prepend(newTaskShell);
+        newTaskShell.prepend(newTask);
         newTask.appendChild(newTaskCloseBtn);
         newTask.appendChild(newTaskForm);
         newTaskForm.appendChild(newTaskName);
@@ -90,7 +94,7 @@ const addTask = function () {
             addTaskBtn.removeAttribute('disabled');
             inProgress.addCardInProgressBtn.removeAttribute('disabled');
             finished.addCardFinishedBtn.removeAttribute('disabled');
-            kanban.removeChild(newTask);
+            body.removeChild(newTaskShell);
         });
 
         newTaskForm.addEventListener('submit', function (e) {
@@ -120,7 +124,7 @@ const addTask = function () {
                     descr: newTaskDescr.value
                 };
 
-                kanban.removeChild(newTask);
+                body.removeChild(newTaskShell);
             };
         });
     });

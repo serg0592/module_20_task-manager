@@ -31,3 +31,9 @@
 .app-add-user-form-pas {
   max-width: 200px;
 }
+
+.btn:disabled {
+  background-color: #5E6C84;
+  color: #000000;
+  transition: all 1s ease 0s;
+}

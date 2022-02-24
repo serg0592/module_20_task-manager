@@ -1,12 +1,4 @@
 /*kanban new task*/
-.new-task-shell {
-  height: 100vh;
-  width: 100vw;
-  background-color: rgb(0, 0, 0);
-  opacity: .5;
-  z-index: 999999;
-}
-
 .new-task-window {
     position: absolute;  
     height: auto;
@@ -14,7 +6,7 @@
     border-radius: 10px;
     background-color: white;
     padding: 8px;
-    margin: 40px 100px;
+    margin: 15vh 15vw;
     opacity: 1;
   }
   

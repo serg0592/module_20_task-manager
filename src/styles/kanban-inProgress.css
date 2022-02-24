@@ -41,6 +41,7 @@
     margin: 0px 0px 3px 0px;
     color: #5E6C84;
     transition: all .2s ease 0s;
+    z-index: 1;
   }
   
   .app-btn-add-card-in-progress:hover {
@@ -61,11 +62,8 @@
   }
   
   .app-btn-add-card-in-progress:disabled {
-    background-color: #5E6C84;
-    color: #000000;
     padding: 0px 0px;
     text-decoration: none;
-    transition: all .2s ease 0s;
   }
   
   .app-add-in-progress-dropdown {

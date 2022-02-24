@@ -31,6 +31,7 @@
     color: #5E6C84;
     padding: 0px 0px;
     transition: all 0.2s ease 0s;
+    z-index: 1;
   }
   
   .app-btn-add-task:hover {
@@ -39,8 +40,5 @@
   }
   
   .app-btn-add-task:disabled {
-    background-color: #5E6C84;
-    color: #000000;
     padding: 0px 0px;
-    transition: all 1s ease 0s;
   }

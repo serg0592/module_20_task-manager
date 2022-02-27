@@ -4,7 +4,6 @@ import { User } from "../models/User";
 export const authUser = function (login, password) {
   const user = new User(login, password);
   if (user.hasAccess === 'admin') {
-    debugger;
     let admin = user;
     appState.currentUser = admin;
     return admin.storageKey;

@@ -17,14 +17,14 @@ export class User extends BaseModel {
           return user.storageKey;
         };
       };
-    } else {
-      let admins = getFromStorage("admin");
-      if (admins.length != 0) {
-        for (let admin of admins) {
-          if (admin.login === this.login && admin.password === this.password) {
-            this.storageKey = admin.storageKey;
-            return admin.storageKey;
-          };
+    };
+
+    let admins = getFromStorage("admin");
+    if (admins.length != 0) {
+      for (let admin of admins) {
+        if (admin.login === this.login && admin.password === this.password) {
+          this.storageKey = admin.storageKey;
+          return admin.storageKey;
         };
       };
     };

@@ -12,7 +12,9 @@ export const addUser = function () {
             password = formData.get("password");
   
       if (!(login === '') && !(password === '')) {
+        debugger;
         const newUser = new User(login, password);
+        newUser.storageKey = 'user';
         User.save(newUser);
         alert('Added');
         addUserLog.value = '';

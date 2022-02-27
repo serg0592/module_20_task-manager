@@ -17,7 +17,9 @@ export const appState = new State();
 
 const loginForm = document.querySelector(".app-login-form");
 
-generateAdmin(User);
+if (!localStorage.getItem("admin")) {
+  generateAdmin(User);
+};
 
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();

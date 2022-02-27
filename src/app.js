@@ -31,7 +31,7 @@ loginForm.addEventListener("submit", function (e) {
     addTask();
     addInProgress();
     addFinished();
-  } else if (authUser(login, password) === true) {
+  } else if (authUser(login, password) === 'user') {
     document.querySelector(".container").innerHTML = taskFieldTemplate;
   } else {
     document.querySelector(".container").innerHTML = noAccessTemplate;

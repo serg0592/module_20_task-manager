@@ -8,6 +8,7 @@
     padding: 8px;
     margin: 15vh 15vw;
     opacity: 1;
+    z-index: 2;
   }
   
   .app-btn-close {

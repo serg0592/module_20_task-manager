@@ -5,20 +5,20 @@ export const getFromStorage = function (key) {
 
 //выгрузка данных в localStorage (значение, ключ)
 export const addToStorage = function (obj, key) {
-  const storageData = getFromStorage(key); //загрузка по данному ключу из localStorage
+  const storageData = getFromStorage(key); //загрузка массива по данному ключу из localStorage
   
   //проверка на наличие данных
-  if ((storageData.length === 0) ||  (storageData === "[]")) { //если localStorage пустое, то выгружаем
-    storageData.push(obj);
+  if ((storageData.length === 0) ||  (storageData === "[]")) { //если по данному ключу localStorage пустое, то выгружаем
+    storageData.push(obj); //добавить в массив
     localStorage.setItem(key, JSON.stringify(storageData));
-  } else { //если не пустое, то перебираем
-    let countSaver = storageData.length; //запоминаем длину localStorage
+  } else { //если по данному ключу не пустое, то перебираем
+    let countSaver = storageData.length; //запоминаем длину localStorage по данному ключу
     for (let i = 0; i < countSaver; i++ ) {
       if (storageData[i].login === obj.login) { //если такой логин уже есть
         alert ("Такой логин уже занят, придумайте другой");
-        obj = null; //удаляем значение
+        obj = null; //пустой объект
       } else { //если такого логина еще нет
-        storageData.push(obj);
+        storageData.push(obj); //добавить в массив
         localStorage.setItem(key, JSON.stringify(storageData));
         alert('Added');
       };
@@ -26,6 +26,7 @@ export const addToStorage = function (obj, key) {
   };
 };
 
+//генератор админа
 export const generateAdmin = function (User) {
   const admin = new User("admin", "admin");
   admin.storageKey = "admin";
